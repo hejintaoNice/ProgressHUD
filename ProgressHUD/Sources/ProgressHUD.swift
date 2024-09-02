@@ -468,8 +468,13 @@ extension ProgressHUD {
 	}
 
 	private func setupSizesTextNone() {
-		let width = mediaSize + 2 * marginSize
-		let height = mediaSize + 2 * marginSize
+		var width = mediaSize + 2 * marginSize
+		var height = mediaSize + 2 * marginSize
+        
+        if animationType == .dualDotSidestep {
+            width = 88.0
+            height = 88.0
+        }
 
 		let center = CGPoint(x: width / 2, y: height / 2)
 
